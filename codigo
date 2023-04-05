@@ -1,0 +1,28 @@
+num = int(input("Digite um número: "))
+
+# inicializa as variáveis a e b com os dois primeiros números da sequencia
+a, b = 0, 1
+# flag para indicar se o número fouênciai encontrado na sequência
+encontrado = False
+
+# verifica se o número é igual a 0 ou 1 (que já estão na sequência)
+if num == 0:
+    encontrado = True
+elif num == 1:
+    encontrado = True
+else:
+    # itera sobre a sequência até encontrar um número maior ou igual ao número fornecido
+    while b < num:
+        # calcula o próximo número da sequência
+        a, b = b, a+b
+        
+        # verifica se o número fornecido está presente na sequência
+        if b == num:
+            encontrado = True
+            break
+
+# exibe uma mensagem informando se o número foi encontrado ou não na sequência
+if encontrado:
+    print(f"O número {num} pertence à sequência de Fibonacci.")
+else:
+    print(f"O número {num} não pertence à sequência de Fibonacci.")
